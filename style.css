@@ -109,6 +109,7 @@ body {
     gap: 1rem;
     text-decoration: none;
     color: var(--text-light);
+     margin-left: -20px;
 }
 
 .logo img {
