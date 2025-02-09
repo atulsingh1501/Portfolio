@@ -109,7 +109,6 @@ body {
     gap: 1rem;
     text-decoration: none;
     color: var(--text-light);
-     margin-left: -20px;
 }
 
 .logo img {
@@ -118,6 +117,7 @@ body {
     border-radius: 50%;
     object-fit: cover;
     transition: transform 0.3s ease;
+   margin-left: -20px;
 }
 
 .logo:hover img {
