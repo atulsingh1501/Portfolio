@@ -220,7 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Typing animation
     const typingContainer = document.querySelector('.typing-container');
-    const text = "(I'm a Full Stack Developer) started my path in learning programming.";
+    const text = "(Parul University,Gujarat) A future Programmer and Developer.";
     let charIndex = 0;
 
     function typeText() {
