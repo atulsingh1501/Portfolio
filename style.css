@@ -257,10 +257,10 @@ main {
 footer {
     background-color: rgba(79, 209, 196, 0);
     text-align: center;
-    padding: 2rem;
+    padding: 1rem;
     width: 100%;
     margin-top: auto;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(0px);
 
     
 }
