@@ -268,7 +268,7 @@ main {
 footer {
     background-color: rgba(79, 209, 196, 0); /* Slight transparency for better visibility */
     text-align: center;
-    padding: 1rem;
+    padding: 1.2rem;
     width: 100%;
     margin-top: auto;
     backdrop-filter: blur(0px); /* Adds a subtle blur effect */
