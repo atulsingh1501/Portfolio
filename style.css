@@ -254,7 +254,7 @@ main {
 }
 
 /* Modern Footer Styling */
-footer {
+/* footer {
     background-color: rgba(79, 209, 196, 0);
     text-align: center;
     padding: 1rem;
@@ -263,7 +263,18 @@ footer {
     backdrop-filter: blur(0px);
 
     
+} */
+footer {
+    background-color: rgba(79, 209, 196, 0); /* Slight transparency for better visibility */
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+    margin-top: auto;
+    backdrop-filter: blur(0px); /* Adds a subtle blur effect */
+    position: relative;
+    bottom: 0;
 }
+
 /* Responsive styles */
 @media (max-width: 768px) {
     footer {
@@ -304,7 +315,7 @@ footer::before {
 
 .social-icon {
     color: var(--text-light);
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     text-decoration: none;
     padding: 0.75rem;
     border-radius: 50%;
@@ -370,12 +381,14 @@ footer::before {
         height: 35px;
         font-size: 1rem;
         border-radius: 13px;
+        margin-left: 0;
     }
 }
 
 .footer-info {
     text-align: right;
-}
+
+} 
 
 .copyright {
     font-size: 0.95rem;
@@ -399,6 +412,28 @@ footer::before {
     box-shadow: 0 6px 20px rgba(79, 209, 197, 0.4);
 }
 
+/* .social-icon:hover {
+    transform: translateY(-3px);
+    background: rgba(79, 209, 197, 0.15);
+    box-shadow: 0 5px 15px rgba(79, 209, 197, 0.2);
+}
+
+.social-icon::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(79, 209, 197, 0.2);
+    border-radius: 50%;
+    transform: scale(0);
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover::after {
+    transform: scale(1);
+} */
 .social-icon {
     display: inline-flex;
     justify-content: center;
@@ -438,6 +473,7 @@ footer::before {
     .social-icon {
         width: 35px;
         height: 35px;
+        font-size: 1rem;
     }
     
     .social-icon:hover {
@@ -449,6 +485,7 @@ footer::before {
     .social-icon {
         width: 30px;
         height: 30px;
+        font-size: 1rem;
     }
 
     .social-icon:hover {
@@ -500,6 +537,7 @@ footer::before {
     
     .footer-info {
         text-align: center;
+        font-size: 1rem;
     }
 }
 
