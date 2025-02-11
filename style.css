@@ -1,3 +1,4 @@
+
 :root {
     --bg-dark: #1a202c;
     --bg-dark-light: #2d3748;
@@ -267,7 +268,7 @@ main {
 footer {
     background-color: rgba(79, 209, 196, 0); /* Slight transparency for better visibility */
     text-align: center;
-    padding: 1rem;
+    padding: rem;
     width: 100%;
     margin-top: auto;
     backdrop-filter: blur(0px); /* Adds a subtle blur effect */
@@ -377,11 +378,12 @@ footer::before {
 
 @media (max-width: 480px) {
     .footer-logo {
-        width: 35px;
-        height: 35px;
-        font-size: 1rem;
-        border-radius: 13px;
-        margin-left: 0;
+        width: 36px;
+        height: 36px;
+        font-size: 1.12rem;
+        border-radius: 12px;
+        margin:0 10px ;
+
     }
 }
 
@@ -391,7 +393,7 @@ footer::before {
 } 
 
 .copyright {
-    font-size: 0.95rem;
+    font-size: 0.8rem;
     color: var(--text-light);
     opacity: 0.9;
     margin: 0;
@@ -399,7 +401,7 @@ footer::before {
 
 .copyright .highlight {
     position: relative;
-    padding: 0.2rem 0.5rem;
+    padding: 0.2rem 0.6rem;
     background: rgba(79, 209, 197, 0.1);
     border-radius: 4px;
 }
@@ -471,8 +473,8 @@ footer::before {
 /* Responsive Styles */
 @media (max-width: 768px) {
     .social-icon {
-        width: 35px;
-        height: 35px;
+        width: 37px;
+        height: 37px;
         font-size: 1rem;
     }
     
@@ -483,9 +485,11 @@ footer::before {
 
 @media (max-width: 480px) {
     .social-icon {
-        width: 30px;
-        height: 30px;
+        width: 37px;
+        height: 37px;
         font-size: 1rem;
+        margin: 0 -6px; /* Adjust spacing as needed */
+        
     }
 
     .social-icon:hover {
