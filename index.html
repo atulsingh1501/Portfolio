@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atul Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="particle-container"></div>
+    
+<!-- Replace your existing nav element with this -->
+<nav id="navbar">
+    <div class="logo"><img src="download.gif" alt="Logo Image"/></div>
+        <!-- Add this div for login/user profile -->
+         <!-- <div class="user-section">
+            <button id="login-button" class="discord-login">
+                <i class="fab fa-discord"></i> Login with Discord
+            </button>
+            
+            <div id="user-profile" class="user-profile hidden">
+                <img id="user-avatar" src="" alt="User Avatar" class="user-avatar">
+                <div id="profile-dropdown" class="profile-dropdown hidden">
+                    <div id="username" class="username"></div>
+                    <button id="logout-button" class="logout-button">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </button>
+                </div>
+            </div>
+        </div>  -->
+    <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="nav-links">
+        <button data-section="home">
+            <i class="fas fa-home"></i> Home
+        </button>
+        <button data-section="projects">
+            <i class="fas fa-code"></i> Projects
+        </button>
+        <button data-section="skills">
+            <i class="fas fa-laptop-code"></i> Skills
+        </button>
+        <button data-section="design">
+            <i class="fas fa-palette"></i> Design
+        </button>
+    </div>
+</nav>
+
+<div class="menu-backdrop"></div>
+
+    <div class="content-wrapper">
+        <main id="content">
+            <section id="home" class="active-section">
+                <div class="home-content">
+                    <h1 class="hero-title">
+                        Hi, I'm <span class="highlight typing-text" id="name">Atul Singh</span>
+                    </h1>
+                    <p class="hero-description">
+                        A <span class="highlight"> Engineering</span> Student 
+                        <span class="typing-container"></span>
+                    </p>
+                </div>
+            </section>
+
+            <section id="projects" class="hidden-section">
+                <h2>My Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3>Project Alpha</h3>
+                        <p>Bla Bla Bla BLa Bla BLa BLa</p>
+                        <div class="tech-tags">
+                            <span>React</span>
+                            <span>Tailwind</span>
+                            <span>Framer Motion</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <h3>Project Beta</h3>
+                        <p>Bla Bla Bla BLa Bla BLa BLa</p>
+                        <div class="tech-tags">
+                            <span>Next.js</span>
+                            <span>TypeScript</span>
+                            <span>Animations</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <h3>Project Gamma</h3>
+                        <p>Bla Bla Bla BLa Bla BLa BLa</p>
+                        <div class="tech-tags">
+                            <span>D3.js</span>
+                            <span>Redux</span>
+                            <span>GraphQL</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <h3>Project Delta</h3>
+                        <p>Bla Bla Bla BLa Bla BLa BLa</p>
+                        <div class="tech-tags">
+                            <span>TensorFlow</span>
+                            <span>Python</span>
+                            <span>Flask</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="skills" class="hidden-section">
+                <h1>My Skills & Expertise</h1>
+            
+                <!-- Languages Section -->
+                <h2><i class="fas fa-language"></i> Languages and communication</h2>
+                <div class="cards">
+                    <div class="card">
+                        <div class="circle">
+                            <svg class="progress-ring" width="100" height="100">
+                                <circle class="progress-ring__circle" stroke="#4fd1c5" stroke-width="8" fill="transparent" r="45" cx="50" cy="50" />
+                            </svg>
+                            <span>100%</span>
+                        </div>
+                        <p>
+                            <img src="india.png" alt="India Flag" class="flag-icon" />
+                            Hindi
+                        </p>
+                        <p>Native Speaker</p>
+                    </div>
+                    <div class="card">
+                        <div class="circle">
+                            <svg class="progress-ring" width="100" height="100">
+                                <circle class="progress-ring__circle" stroke="#4fd1c5" stroke-width="8" fill="transparent" r="45" cx="50" cy="50" />
+                            </svg>
+                            <span>52%</span>
+                        </div>
+                        <p>
+                            <img src="uk.png" alt="UK Flag" class="flag-icon" />
+                            English
+                        </p>
+                        <p>A1 Level (Learning)</p>
+                    </div>
+                    <div class="card">
+                        <div class="circle">
+                            <svg class="progress-ring" width="100" height="100">
+                                <circle class="progress-ring__circle" stroke="#4fd1c5" stroke-width="8" fill="transparent" r="45" cx="50" cy="50" />
+                            </svg>
+                            <span>60%</span>
+                        </div>
+                        <p>
+                            <img src="com.png" alt="communication " class="flag-icon" />
+                            Communication
+                        </p>
+                        <p>Good</p>
+                    </div>
+                    <div class="card">
+                        <div class="circle">
+                            <svg class="progress-ring" width="100" height="100">
+                                <circle class="progress-ring__circle" stroke="#4fd1c5" stroke-width="8" fill="transparent" r="45" cx="50" cy="50" />
+                            </svg>
+                            <span>65%</span>
+                        </div>
+                        <p>
+                            <img src="project.png" alt="Project" class="flag-icon" />
+                            Project Management
+                        </p>
+                        <p>Hackathons</p>
+                    </div>
+                </div>
+            
+                <!-- Technical Skills Section -->
+                <h2><i class="fas fa-laptop-code"></i> Technical Skills</h2>
+                <div class="skill-bar">
+                    <p><i class="fas fa-globe"></i> Web Development</p>
+                    <div class="bar"><div class="fill" style="width: 89%;"></div></div>
+                </div>
+                <div class="skill-bar">
+                    <p><i class="fab fa-python"></i> Python</p>
+                    <div class="bar"><div class="fill" style="width: 53%;"></div></div>
+                </div>
+                <div class="skill-bar">
+                    <p><i class="fas fa-gamepad"></i> C++</p>
+                    <div class="bar"><div class="fill" style="width: 52%;"></div></div>
+                </div>
+                <div class="skill-bar">
+                    <p><i class="fas fa-database"></i> DSA</p>
+                    <div class="bar"><div class="fill" style="width: 20%;"></div></div>
+                </div>
+                <div class="skill-bar">
+                    <p><i class="fas fa-video"></i> Video Editing</p>
+                    <div class="bar"><div class="fill" style="width: 50%;"></div></div>
+                </div>
+            
+                <!-- Education & Expertise Section -->
+                <h2><i class="fas fa-graduation-cap"></i> Education & Expertise</h2>
+                <div class="cards">
+                    <div class="card">
+                        <h3><i class="fas fa-university"></i> College</h3>
+                        <p>Engineering Student at Parul University</p>
+                        <ul>
+                            <li><i class="fas fa-book"></i> B-tech</li>
+                            <li><i class="fas fa-microscope"></i> CSE student</li>
+                            <li><i class="fas fa-comments"></i> Communication</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3><i class="fas fa-code"></i> Programming</h3>
+                        <p>Self-taught Developer</p>
+                        <ul>
+                            <li><i class="fas fa-mobile-alt"></i> App and Web Development</li>
+                            <li><i class="fas fa-paint-brush"></i> Frontend Developer</li>
+                            <li><i class="fas fa-tools"></i> Software Engineering</li>
+                            <li><i class="fas fa-gamepad"></i> Data Structure & Algorithms</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+          <section id="design" class="hidden-section">
+                <div class="design-hero">
+                    <h2 class="glitch-title" data-text="Creative Corner">Creative Corner</h2>
+                    <p class="subtitle">Exploring the intersection of code and creativity</p>
+                </div>
+            
+        </main>
+
+        <footer>
+            <div class="footer-bottom">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="footer-text">
+                        <h4><span class="highlight">Atul</span> ( Engineering Student / Developer / Designer )</h4>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/atulsingh1501"  target="_blank" class="social-icon">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/atul-singh-20y/"  target="_blank" class="social-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" class="social-icon" target="_blank">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.instagram.com/_atul_.20/"  target="_blank" class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-icon" target="_blank">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                </div>
+                <div class="footer-info">
+                    <p class="copyright">© 2025 ‎ ‎ ‎ <span class="highlight typing-text">Made with ❤ By Atul (@Atul)</span></p>
+                </div>
+            </div>
+        </footer>
+        </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

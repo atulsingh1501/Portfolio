@@ -1,0 +1,15 @@
+{
+    "name": "fouad-portfolio",
+    "version": "1.0.0",
+    "dependencies": {
+      "framer-motion": "^4.1.17",
+      "lucide-react": "^0.263.0",
+      "react": "^17.0.2",
+      "react-dom": "^17.0.2",
+      "tailwindcss": "^3.3.3"
+    },
+    "scripts": {
+      "start": "react-scripts start",
+      "build": "react-scripts build"
+    }
+  }
