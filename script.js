@@ -231,7 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Typing animation
    const typingContainer = document.querySelector('.typing-container');
-const text = "(Parul University, Gujarat)a future Programmer and Developer."; // Added <br> for line break
+const text = "(Parul University, Gujarat), a future Programmer and Developer."; // Added <br> for line break
 let charIndex = 0;
 
 function typeText() {
