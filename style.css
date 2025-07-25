@@ -971,6 +971,11 @@ canvas {
     animation: fadeInUp 0.5s ease forwards;
 }
 
+/* Staggered animation for achievement cards */
+.achievements-grid .achievement-card:nth-child(1) { animation-delay: 0.2s; }
+.achievements-grid .achievement-card:nth-child(2) { animation-delay: 0.4s; }
+.achievements-grid .achievement-card:nth-child(3) { animation-delay: 0.6s; }
+
 .achievement-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
@@ -1278,7 +1283,8 @@ canvas {
 
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    /* Use auto-fit with a robust minmax for natural wrapping on all screen sizes */
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 1.5rem;
     margin-top: 2rem;
     margin-bottom: 3rem;
@@ -1478,14 +1484,9 @@ canvas {
         font-size: 1rem;
     }
 
-    .cards {
-        grid-template-columns: 1fr;
-    }
-
-    .language-cards {
-        grid-template-columns: 1fr 1fr;
-    }
-
+    /* The `auto-fit` property on `.cards` now handles responsiveness naturally,
+       so specific column overrides for tablets and mobiles are no longer needed. */
+ 
     .card {
         margin-bottom: 1rem;
     }
