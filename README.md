@@ -4,8 +4,6 @@ A dynamic and responsive personal portfolio website built with HTML, CSS, and Ja
 
 **[➡️ View Live Demo](https://atulsingh1501.github.io/Portfolio/)** 👈 *(You can update this link if needed)*
 
-![Portfolio Screenshot](https://raw.githubusercontent.com/atulsingh1501/Portfolio/main/portfolio-screenshot.png)
-*(To make this image work, add a screenshot named `portfolio-screenshot.png` to your repository)*
 
 ---
 
