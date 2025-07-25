@@ -44,39 +44,9 @@ This project was built using the following technologies:
 
 ---
 
-## ⚙️ Getting Started
+## Copyright Notice
 
-To get a local copy up and running, follow these simple steps.
-
-### Prerequisites
-
-You just need a modern web browser.
-
-### Installation
-
-1.  Clone the repository:
-    ```sh
-    git clone https://github.com/atulsingh1501/Portfolio.git
-    ```
-2.  Navigate to the project directory:
-    ```sh
-    cd Portfolio
-    ```
-3.  Open `index.html` in your favorite browser.
-
----
-
-## 🎨 Customization
-
-You can easily customize this portfolio to make it your own:
-
-*   **Home Page:** Edit the `data-text` attribute in `index.html` within the `#home` section to change the typing animation text.
-*   **Projects:** Add or modify project cards within the `.projects-grid` in `index.html`.
-*   **Skills:** Update your skills in the `#skills` section. For language circles, change the percentage inside the `<span>` tag. For skill bars, adjust the inline `width` style on the `.fill` element.
-*   **Achievements:** Add new items to the lists in the `.achievement-card` elements. To link a proof image, ensure the image is in your project folder and update the `data-image` attribute on the `.view-proof-btn`.
-*   **Contact Form:** To receive messages, create an account on Formspree and replace the endpoint URL in `script.js` with your own.
-
----
+© 2025 Atul Singh. All rights reserved.
 
 ## ©️ Copyright and License
 
@@ -90,10 +60,10 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
----
+--
 
 ## 📞 Contact
 
-Atul Singh - LinkedIn
+Atul Singh - https://www.linkedin.com/in/atul-singh-20y/
 
 Project Link: https://github.com/atulsingh1501/Portfolio
