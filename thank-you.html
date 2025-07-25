@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You! - Atul's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        .thank-you-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: calc(100vh - var(--navbar-height));
+            padding: 2rem;
+        }
+        .thank-you-container h1 {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+        }
+        .thank-you-container p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        .back-home-btn {
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(90deg, var(--accent-color) 60%, var(--accent-color-dark) 100%);
+            color: #222;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .back-home-btn:hover {
+            background: linear-gradient(90deg, var(--accent-color-dark) 60%, var(--accent-color) 100%);
+            color: white;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div id="particle-container"></div>
+    <main>
+        <div class="thank-you-container">
+            <h1><i class="fas fa-check-circle"></i> Thank You!</h1>
+            <p>Your message has been sent successfully. I'll get back to you as soon as possible.</p>
+            <a href="index.html" class="back-home-btn">Back to Portfolio</a>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script>
+        if (document.getElementById('particle-container')) {
+            particlesJS('particle-container', { "particles": { "number": { "value": 80, "density": { "enable": true, "value_area": 800 } }, "color": { "value": "#4fd1c5" }, "shape": { "type": "circle" }, "opacity": { "value": 0.5 }, "size": { "value": 3, "random": true }, "line_linked": { "enable": true, "distance": 150, "color": "#4fd1c5", "opacity": 0.4, "width": 1 }, "move": { "enable": true, "speed": 2, "direction": "none", "out_mode": "out" } }, "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "repulse" }, "onclick": { "enable": true, "mode": "push" } } }, "retina_detect": true });
+        }
+    </script>
+</body>
+</html>

@@ -1,132 +1,39 @@
 document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.circle').forEach((circle, index) => {
-        const percentages = [100, 52, 60, 65]; // Percentages for Hindi, English, French, and German
-        const radius = 45;
-        const circumference = 2 * Math.PI * radius;
-        const offset = circumference - (percentages[index] / 100) * circumference;
+    // --- Animate Language Circles on Scroll ---
+    const circles = document.querySelectorAll('.language-cards .circle');
 
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const circle = entry.target;
+                const percentageSpan = circle.querySelector('span');
+                if (!percentageSpan) return;
+
+                const percentage = parseInt(percentageSpan.textContent, 10);
+                const radius = 45;
+                const circumference = 2 * Math.PI * radius;
+                const offset = circumference - (percentage / 100) * circumference;
+
+                const progressCircle = circle.querySelector('.progress-ring__circle');
+                progressCircle.style.strokeDashoffset = offset;
+                
+                observer.unobserve(circle); // Animate only once
+            }
+        });
+    }, {
+        threshold: 0.5 // Trigger when 50% of the element is visible
+    });
+
+    circles.forEach(circle => {
+        // Set initial state for animation
+        const radius = 45; // Corrected radius to match SVG
+        const circumference = 2 * Math.PI * radius;
         const progressCircle = circle.querySelector('.progress-ring__circle');
         progressCircle.style.strokeDasharray = `${circumference} ${circumference}`;
-        progressCircle.style.strokeDashoffset = offset;
+        progressCircle.style.strokeDashoffset = circumference; // Start empty
+
+        observer.observe(circle);
     });
-     // Background Music
-     const audio = new Audio('background.mp3');
-     audio.loop = true; // To make it loop
-     audio.play(); // To start the music automatically
-
-    const particleContainer = document.getElementById('particle-container');
-    let mouseX = 0, mouseY = 0;
-    const particles = [];
-
-    const leafColors = [
-        'rgba(79, 209, 197, 0.4)',   
-        'rgba(45, 55, 72, 0.3)',     
-        'rgba(32, 42, 58, 0.5)',     
-        'rgba(79, 209, 197, 0.2)'    
-    ];
-
-    class LeafParticle {
-        constructor() {
-            this.element = document.createElement('div');
-            this.element.classList.add('leaf-particle');
-            
-            this.width = Math.random() * 15 + 10;
-            this.height = this.width * (Math.random() * 0.5 + 0.5);
-            this.speed = Math.random() * 1.5 + 0.5;
-            this.color = leafColors[Math.floor(Math.random() * leafColors.length)];
-            
-            this.wobbleFrequency = Math.random() * 0.05 + 0.02;
-            this.wobbleAmplitude = Math.random() * 10 + 5;
-            this.rotationSpeed = (Math.random() - 0.5) * 2;
-            
-            this.x = Math.random() * window.innerWidth;
-            this.y = -50;
-            this.time = Math.random() * 100;
-            this.rotation = Math.random() * 360;
-            
-            this.createLeafShape();
-            
-            particleContainer.appendChild(this.element);
-        }
-
-        createLeafShape() {
-            this.element.innerHTML = `
-                <svg viewBox="0 0 30 40" width="${this.width}" height="${this.height}">
-                    <path 
-                        d="M15 0 Q25 10, 20 20 Q15 30, 15 40 Q10 30, 5 20 Q0 10, 15 0" 
-                        fill="${this.color}" 
-                        stroke="none"
-                    />
-                </svg>
-            `;
-            
-            this.element.style.position = 'absolute';
-            this.element.style.transformOrigin = 'center';
-        }
-
-        update() {
-            this.time += 0.1;
-            
-            this.y += this.speed;
-            this.x += Math.sin(this.time * this.wobbleFrequency) * this.wobbleAmplitude * 0.1;
-            
-            this.rotation += this.rotationSpeed;
-
-            const cursorInfluence = (mouseX - this.x) / window.innerWidth;
-            this.x += cursorInfluence * 1.1; 
-
-            this.element.style.transform = `translate(${this.x}px, ${this.y}px) rotate(${this.rotation}deg)`;
-            
-            if (this.y > window.innerHeight + 50) {
-                this.element.remove();
-                return false;
-            }
-            return true;
-        }
-    }
-
-    const particleStyle = document.createElement('style');
-    particleStyle.innerHTML = `
-        #particle-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-            overflow: hidden;
-            perspective: 1000px;
-        }
-        .leaf-particle {
-            position: absolute;
-            pointer-events: none;
-            will-change: transform;
-            transition: opacity 0.3s ease;
-        }
-    `;
-    document.head.appendChild(particleStyle);
-
-    window.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-    });
-
-    function generateLeaves() {
-        if (particles.length < 70) {
-            particles.push(new LeafParticle());
-        }
-
-        for (let i = particles.length - 1; i >= 0; i--) {
-            if (!particles[i].update()) {
-                particles.splice(i, 1);
-            }
-        }
-
-        requestAnimationFrame(generateLeaves);
-    }
-
-    generateLeaves();
 
   // Navigation and Mobile Menu
   const hamburger = document.querySelector('.hamburger');
@@ -229,156 +136,204 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Typing animation
-   const typingContainer = document.querySelector('.typing-container');
-const text = "(Parul University, Gujarat)a future Programmer and Developer."; // Added <br> for line break
-let charIndex = 0;
+    // --- Form Validation and Submission ---
+    const contactForm = document.querySelector('.contact-form');
 
-function typeText() {
-    if (charIndex < text.length) {
-        typingContainer.innerHTML += text.charAt(charIndex); // Use innerHTML to support <br>
-        charIndex++;
-        setTimeout(typeText, 50);
-    } else {
-        typingContainer.style.animation = 'float 3s ease-in-out infinite';
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const submitBtn = contactForm.querySelector('.submit-btn');
+            // Replace with your actual Formspree endpoint URL
+            const formAction = "https://formspree.io/f/meozganv"; 
+            const formData = new FormData(contactForm);
+
+            // Simple validation
+            if (!formData.get('name') || !formData.get('email') || !formData.get('message')) {
+                alert('Please fill out all fields.');
+                return;
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin"></i>';
+
+            try {
+                const response = await fetch(formAction, {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json'
+                    },
+                    body: formData
+                });
+
+                if (response.ok) {
+                    window.location.href = 'thank-you.html';
+                } else {
+                    const result = await response.json();
+                    console.error('Submission failed:', result);
+                    alert(result.error || 'An error occurred. Please try again.');
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = 'Send Message';
+                }
+            } catch (error) {
+                console.error('Error submitting form:', error);
+                alert('An error occurred. Please check your connection and try again.');
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'Send Message';
+            }
+        });
     }
-}
 
-setTimeout(typeText, 1000);
+    // Typing animation
+    const typingContainer = document.querySelector('.typing-container');
+    if (typingContainer) {
+        const text = typingContainer.dataset.text || "(Parul University, Gujarat), a future Programmer and Developer.";
+        let charIndex = 0;
+
+        function typeText() {
+            if (charIndex < text.length) {
+                typingContainer.innerHTML += text.charAt(charIndex);
+                charIndex++;
+                setTimeout(typeText, 50);
+            } else {
+                typingContainer.style.animation = 'float 3s ease-in-out infinite';
+            }
+        }
+        setTimeout(typeText, 1000);
+    }
 
 
     // Name hover effect
-    const nameElement = document.getElementById('name');
-    const letters = nameElement.textContent.split('');
-    
-    nameElement.innerHTML = letters
-        .map(letter => `<span class="letter">${letter}</span>`)
-        .join('');
+    // The code below was intended to create a letter-by-letter animation on hover,
+    // but it was incomplete and conflicted with the "typing" cursor effect.
+    // I've commented it out to restore the blinking cursor.
+    /*
+    const nameElement = document.getElementById('typing-name'); ...
+    */
 
-    const letterElements = nameElement.querySelectorAll('.letter');
-    letterElements.forEach((letter, index) => {
-        letter.style.animationDelay = `${index * 0.1}s`;
-    });
-
-    // Highlight hover animations
-    const highlights = document.querySelectorAll('.highlight');
-    highlights.forEach(highlight => {
-        highlight.addEventListener('mouseover', () => {
-            highlight.style.transform = 'scale(1.1)';
-            highlight.style.transition = 'transform 0.3s ease';
-        });
-
-        highlight.addEventListener('mouseout', () => {
-            highlight.style.transform = 'scale(1)';
-        });
-    });
-});
-
-// Navbar scroll behavior
-let lastScrollTop = 0;
-const navbar = document.getElementById('navbar');
-const threshold = 100;
-
-window.addEventListener('scroll', () => {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    
-    if (scrollTop > lastScrollTop && scrollTop > threshold) {
-        navbar.classList.add('scroll-down');
-        navbar.classList.remove('scroll-up');
-    } else {
-        navbar.classList.add('scroll-up');
-        navbar.classList.remove('scroll-down');
-    }
-    
-    lastScrollTop = scrollTop;
-});
-
-
-
-
-// Discord Login Integration
-const loginButton = document.getElementById('login-button');
-const userProfile = document.getElementById('user-profile');
-const userAvatar = document.getElementById('user-avatar');
-const profileDropdown = document.getElementById('profile-dropdown');
-const username = document.getElementById('username');
-const logoutButton = document.getElementById('logout-button');
-
-// Discord OAuth2 configuration
-const CLIENT_ID = '1327073500812546080'; // Replace with your Discord application client ID
-const REDIRECT_URI = encodeURIComponent(window.location.origin);
-const DISCORD_ENDPOINT = `https://discord.com/api/oauth2/authorize?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=token&scope=identify`;
-
-// Check if user is logged in
-function checkLogin() {
-    const userData = localStorage.getItem('discord_user');
-    if (userData) {
-        const user = JSON.parse(userData);
-        showUserProfile(user);
-    }
-}
-
-// Handle login button click
-loginButton.addEventListener('click', () => {
-    window.location.href = DISCORD_ENDPOINT;
-});
-
-// Handle logout button click
-logoutButton.addEventListener('click', () => {
-    localStorage.removeItem('discord_user');
-    hideUserProfile();
-});
-
-// Toggle profile dropdown
-userAvatar.addEventListener('click', () => {
-    profileDropdown.classList.toggle('show');
-});
-
-// Close dropdown when clicking outside
-document.addEventListener('click', (e) => {
-    if (!userProfile.contains(e.target)) {
-        profileDropdown.classList.remove('show');
-    }
-});
-
-// Show user profile
-function showUserProfile(user) {
-    loginButton.classList.add('hidden');
-    userProfile.classList.remove('hidden');
-    userAvatar.src = `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.png`;
-    username.textContent = user.username;
-}
-
-// Hide user profile
-function hideUserProfile() {
-    loginButton.classList.remove('hidden');
-    userProfile.classList.add('hidden');
-    profileDropdown.classList.remove('show');
-}
-
-// Handle OAuth callback
-function handleCallback() {
-    const fragment = new URLSearchParams(window.location.hash.slice(1));
-    const accessToken = fragment.get('access_token');
-
-    if (accessToken) {
-        // Get user data from Discord
-        fetch('https://discord.com/api/users/@me', {
-            headers: {
-                Authorization: `Bearer ${accessToken}`,
+    // --- Particles.js Initialization ---
+    if (document.getElementById('particle-container')) {
+        particlesJS('particle-container', {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#4fd1c5"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#4fd1c5",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 2,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                }
             },
-        })
-        .then(response => response.json())
-        .then(user => {
-            localStorage.setItem('discord_user', JSON.stringify(user));
-            showUserProfile(user);
-            // Remove the hash from the URL
-            history.pushState('', document.title, window.location.pathname);
-        })
-        .catch(error => console.error('Error fetching user data:', error));
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "repulse"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "repulse": {
+                        "distance": 100,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    }
+                }
+            },
+            "retina_detect": true
+        });
     }
-}
 
-// Initial setup
-checkLogin();
-handleCallback();
+    // Navbar scroll behavior
+    let lastScrollTop = 0;
+    const navbar = document.getElementById('navbar');
+    const threshold = 100;
+
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (scrollTop > lastScrollTop && scrollTop > threshold) {
+            navbar.classList.add('scroll-down');
+            navbar.classList.remove('scroll-up');
+        } else {
+            navbar.classList.add('scroll-up');
+            navbar.classList.remove('scroll-down');
+        }
+        
+        lastScrollTop = scrollTop;
+    });
+
+    // --- Image Modal Logic ---
+    const modal = document.getElementById("image-modal");
+    if (modal) {
+        const modalImg = document.getElementById("modal-image");
+        const closeModal = document.querySelector(".close-modal");
+        const proofButtons = document.querySelectorAll('.view-proof-btn');
+
+        proofButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                modal.style.display = "block";
+                modalImg.src = this.dataset.image;
+            });
+        });
+
+        const hideModal = () => {
+            modal.style.display = "none";
+        };
+
+        if (closeModal) {
+            closeModal.onclick = hideModal;
+        }
+
+        window.addEventListener('click', function(event) {
+            if (event.target == modal) {
+                hideModal();
+            }
+        });
+    }
+});
