@@ -2,7 +2,7 @@
 
 A dynamic and responsive personal portfolio website built with HTML, CSS, and JavaScript to showcase my skills, projects, and achievements.
 
-**[➡️ View Live Demo](https://atulsingh1501.github.io/Portfolio/)** 👈 *(You can update this link if needed)*
+**[➡️ View Live Demo](https://atulsingh1501.github.io/Portfolio/)** 👈 
 
 
 ---
