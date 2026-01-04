@@ -21,8 +21,11 @@
         <!-- Sidebar / Navigation (Compact) -->
         <nav class="sidebar">
             <div class="profile-summary">
-                <div class="profile-pic-container">
-                    <img src="assets/images/profile.jpg" alt="Atul Singh" class="profile-pic">
+                <div class="avatar-wrapper"
+                    style="position: relative; width: 48px; height: 48px; margin-bottom: var(--spacing-md);">
+                    <div class="profile-pic-container" style="margin-bottom: 0;">
+                        <img src="assets/images/profile.jpg" alt="Atul Singh" class="profile-pic">
+                    </div>
                     <div class="status-indicator live-dot"></div>
                 </div>
                 <h1 class="nav-name">Atul Singh</h1>
@@ -136,7 +139,8 @@
             <!-- 3. Skills Section (Grouped Tags, No Percentages) -->
             <section id="stack" class="content-section">
                 <h3 class="section-title">Technical Skills</h3>
-                <div class="dashboard-grid" style="grid-template-columns: repeat(3, 1fr); gap: var(--spacing-lg);">
+                <div class="dashboard-grid" id="skills-grid"
+                    style="grid-template-columns: repeat(3, 1fr); gap: var(--spacing-lg);">
                     <!-- Languages -->
                     <div class="card" style="grid-column: span 1;">
                         <div class="card-header">
@@ -187,7 +191,7 @@
             <!-- 4. Coding Stats Section -->
             <section id="stats" class="content-section">
                 <h3 class="section-title">Coding Activity</h3>
-                <div class="dashboard-grid">
+                <div class="dashboard-grid" id="stats-grid">
                     <!-- GitHub Card (Span 2) -->
                     <div class="card github-card">
                         <div class="card-header">
@@ -203,7 +207,7 @@
                     <div class="card metric-card">
                         <div class="card-header">
                             <h3><i class="fas fa-code"></i> LeetCode</h3>
-                            <a href="https://leetcode.com/u/atul_1501/" target="_blank" class="external-link"><i
+                            <a href="https://leetcode.com/u/Atulya_15/" target="_blank" class="external-link"><i
                                     class="fas fa-external-link-alt"></i></a>
                         </div>
                         <div class="metric-body">
@@ -239,8 +243,8 @@
                                     CodeChef <i class="fas fa-external-link-alt"
                                         style="font-size: 0.7rem; color: var(--text-secondary);"></i>
                                 </div>
-                                <div id="codechef-rating" style="font-size: 0.85rem; color: var(--text-secondary);">Max
-                                    Rating: <span style="color: var(--accent-color)">1600+</span> (3★)</div>
+                                <div id="codechef-rating" style="font-size: 0.85rem; color: var(--text-secondary);">
+                                    View Profile</div>
                             </a>
                             <div style="border-top: 1px solid var(--border-subtle); padding-top: 1.5rem; width: 100%;">
                                 <a href="https://www.hackerrank.com/profile/atulsingh05540" target="_blank"
@@ -251,8 +255,8 @@
                                             style="font-size: 0.7rem; color: var(--text-secondary);"></i>
                                     </div>
                                     <div id="hackerrank-badge"
-                                        style="font-size: 0.85rem; color: var(--text-secondary);">Gold Badge in <span
-                                            style="color: var(--warning-color)">Problem Solving</span></div>
+                                        style="font-size: 0.85rem; color: var(--text-secondary);">
+                                        View Profile</div>
                                 </a>
                             </div>
                         </div>
@@ -263,27 +267,33 @@
             <!-- 5. Achievements Section -->
             <section id="achievements" class="content-section">
                 <h3 class="section-title">Achievements</h3>
-                <div class="dashboard-grid" style="grid-template-columns: repeat(3, 1fr);">
-                    <div class="card" style="border-left: 3px solid var(--accent-color);">
+                <div class="dashboard-grid" id="achieve-grid"
+                    style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                    <!-- SIH 2024 Participation -->
+                    <div class="card" style="border-left: 3px solid var(--success-color);">
                         <div class="card-header" style="margin-bottom: 0.5rem;">
-                            <h4 style="font-size: 1.1rem; color: var(--text-primary);">Smart India Hackathon</h4>
+                            <h4 style="font-size: 1.1rem; color: var(--text-primary);">SIH 2024 Participant</h4>
                         </div>
-                        <p style="font-size: 0.9rem; color: var(--text-secondary);">Finalist in SIH 2023. Developed
-                            innovative solutions for real-world problems under pressure.</p>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary);">Selected for SIH 2024 via Vadodara
+                            Hackathon. Developed an autonomous tactical drone.</p>
                     </div>
-                    <div class="card" style="border-left: 3px solid var(--warning-color);">
+
+                    <!-- XR Creator Hackathon -->
+                    <div class="card" style="border-left: 3px solid #a855f7;">
                         <div class="card-header" style="margin-bottom: 0.5rem;">
-                            <h4 style="font-size: 1.1rem; color: var(--text-primary);">LeetCode Knight</h4>
+                            <h4 style="font-size: 1.1rem; color: var(--text-primary);">XR Creator Hackathon</h4>
                         </div>
-                        <p style="font-size: 0.9rem; color: var(--text-secondary);">Achieved Knight badge with a max
-                            competition rating of 1800+.</p>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary);">Earned both Qualification (Cleared
+                            Round 1) and Participation certificates in WAVES 2025 by Ministry of I&B.</p>
                     </div>
-                    <div class="card" style="border-left: 3px solid var(--text-secondary);">
+
+                    <!-- Vadodara Hackathon -->
+                    <div class="card" style="border-left: 3px solid #3b82f6;">
                         <div class="card-header" style="margin-bottom: 0.5rem;">
-                            <h4 style="font-size: 1.1rem; color: var(--text-primary);">CodeChef 3-Star</h4>
+                            <h4 style="font-size: 1.1rem; color: var(--text-primary);">Vadodara Hackathon 5.0</h4>
                         </div>
-                        <p style="font-size: 0.9rem; color: var(--text-secondary);">Consistent contest performer with
-                            strong algorithmic problem-solving skills.</p>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary);">Active participant and innovator at
+                            the regional hackathon organized by Parul University.</p>
                     </div>
                 </div>
             </section>
@@ -299,6 +309,8 @@
                         style="display: inline-flex; font-size: 1.1rem; padding: 12px 24px;">
                         <i class="fas fa-envelope"></i> &nbsp; Say Hello
                     </a>
+                    <p style="margin-top: 1rem; color: var(--text-secondary); font-family: monospace; font-size: 1rem;">
+                        atulsingh05540@gmail.com</p>
                     <div style="margin-top: 3rem; display: flex; justify-content: center; gap: 24px;">
                         <a href="https://github.com/atulsingh1501" target="_blank" class="icon-link"><i
                                 class="fab fa-github"></i></a>

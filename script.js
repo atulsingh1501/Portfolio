@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- LeetCode Stats (Real-time) ---
     async function fetchLeetCodeStats() {
         try {
-            const username = "atul_1501";
+            const username = "Atulya_15";
             const response = await fetch(`https://leetcode-stats-api.herokuapp.com/${username}`);
             const data = await response.json();
 

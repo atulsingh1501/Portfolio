@@ -94,15 +94,16 @@ a {
     /* Moderate zoom */
 }
 
-.status-indicator {
+.avatar-wrapper .status-indicator {
     position: absolute;
     bottom: 0;
     right: 0;
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     background: var(--success-color);
     border: 2px solid var(--bg-dark);
     border-radius: 50%;
+    z-index: 10;
 }
 
 .nav-name {
@@ -321,8 +322,9 @@ a {
 }
 
 .live-dot {
-    width: 6px;
-    height: 6px;
+    width: 8px;
+    height: 8px;
+    display: inline-block;
     background-color: var(--success-color);
     border-radius: 50%;
     box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
@@ -587,6 +589,11 @@ a {
     }
 }
 
+/* Default hidden on desktop */
+.view-more-btn {
+    display: none;
+}
+
 @media (max-width: 768px) {
     .dashboard-container {
         flex-direction: column;
@@ -598,7 +605,11 @@ a {
         width: 100%;
         border-right: none;
         border-bottom: 1px solid var(--border-subtle);
-        padding: var(--spacing-md);
+        padding: var(--spacing-lg) var(--spacing-md);
+        /* Reduce padding */
+        position: relative;
+        /* Static flow */
+        height: auto;
     }
 
     .nav-menu {
@@ -612,7 +623,8 @@ a {
     }
 
     .main-content {
-        padding: var(--spacing-md);
+        padding: var(--spacing-lg) var(--spacing-md);
+        /* Reduce padding */
         overflow: visible;
     }
 
@@ -626,6 +638,31 @@ a {
 
     .dashboard-grid {
         grid-template-columns: 1fr;
+    }
+
+    /* GitHub Graph Mobile */
+    .layout-wrapper {
+        flex-direction: column;
+        /* Stack year selector on top */
+        gap: 12px;
+    }
+
+    .year-selector {
+        flex-direction: row;
+        /* Horizontal years on mobile */
+        overflow-x: auto;
+        padding-bottom: 8px;
+        width: 100%;
+    }
+
+    .year-btn {
+        flex-shrink: 0;
+    }
+
+    .months-header {
+        margin-left: 0;
+        /* Align with left */
+        font-size: 0.7rem;
     }
 
     .github-card {
