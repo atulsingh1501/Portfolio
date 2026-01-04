@@ -1,386 +1,324 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atul Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Atul Singh | Frontend Developer</title>
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    <!-- GitHub Calendar CSS Removed (Using Custom) -->
 </head>
+
 <body>
-    <div id="particle-container"></div>
-    
-<!-- Replace your existing nav element with this -->
-<nav id="navbar">
-    <div class="logo"><img src="download.gif" alt="Logo Image"/></div>
-    <div class="hamburger">
-         <span></span>
-        <span></span>
-        <span></span>
-    </div>
-    <div class="nav-links">
-        <button data-section="home">
-            <i class="fas fa-home"></i> Home
-        </button>
-        <button data-section="projects">
-            <i class="fas fa-code"></i> Projects
-        </button>
-        <button data-section="skills">
-            <i class="fas fa-laptop-code"></i> Skills
-        </button>
-        <button data-section="achievements">
-            <i class="fas fa-trophy"></i> Achievements
-        </button>
-        <button data-section="contact">
-            <i class="fas fa-envelope"></i> Contact
-        </button>
-        <button data-section="design">
-            <i class="fas fa-palette"></i> Design
-        </button>
+    <div class="dashboard-container">
+        <!-- Sidebar / Navigation (Compact) -->
+        <nav class="sidebar">
+            <div class="profile-summary">
+                <div class="profile-pic-container">
+                    <img src="assets/images/profile.jpg" alt="Atul Singh" class="profile-pic">
+                    <div class="status-indicator live-dot"></div>
+                </div>
+                <h1 class="nav-name">Atul Singh</h1>
+                <p class="nav-role">Frontend Developer</p>
+            </div>
 
+            <div class="nav-menu">
+                <a href="#overview" class="nav-item active"><i class="fas fa-home"></i> Overview</a>
+                <a href="#projects" class="nav-item"><i class="fas fa-layer-group"></i> Projects</a>
+                <a href="#stack" class="nav-item"><i class="fas fa-cubes"></i> Stack</a>
+                <a href="#stats" class="nav-item"><i class="fas fa-chart-line"></i> Stats</a>
+                <a href="#achievements" class="nav-item"><i class="fas fa-trophy"></i> Awards</a>
+                <a href="#connect" class="nav-item"><i class="fas fa-paper-plane"></i> Connect</a>
+            </div>
 
+            <div class="nav-footer">
+                <a href="https://github.com/atulsingh1501" target="_blank" class="icon-link"><i
+                        class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/atul-singh-20y/" target="_blank" class="icon-link"><i
+                        class="fab fa-linkedin"></i></a>
+                <a href="https://twitter.com" target="_blank" class="icon-link"><i class="fab fa-twitter"></i></a>
+            </div>
+        </nav>
 
-    </div>
-</nav>
+        <!-- Main Content Area -->
+        <main class="main-content">
 
-<div class="menu-backdrop"></div>
-
-    <div class="content-wrapper">
-        <main id="content">
-            <section id="home" class="active-section">
-                <div class="home-content">
-                    <h1 class="hero-title">
-                        Hi, I'm <span class="highlight typing-text" id="typing-name">Atul Singh</span>
-                    </h1>
-                    <p class="hero-description">
-                        A <span class="highlight"> Engineering</span> Student 
-                        <span class="typing-container" data-text="(Parul University, Gujarat), a future Programmer and Developer."></span>
-                    </p>
+            <!-- 1. Hero Section -->
+            <section id="overview" class="hero-section">
+                <div class="hero-content">
+                    <h1 class="hero-name">Hi, I'm Atul Singh</h1>
+                    <p class="hero-role">Frontend Developer | DSA Learner</p>
+                    <p class="hero-description">I build pixel-perfect, interactive web experiences and solve complex
+                        algorithmic problems. Focused on clean code, performance, and intuitive design.</p>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn btn-primary">View Projects</a>
+                        <a href="https://github.com/atulsingh1501" target="_blank" class="btn"
+                            style="border: 1px solid var(--border-subtle); color: var(--text-secondary);"><i
+                                class="fab fa-github"></i> GitHub</a>
+                    </div>
                 </div>
             </section>
-            
-            <section id="projects" class="hidden-section">
-                <h2 class="cool-heading">My Projects</h2>
-                <p class="section-subtitle">Exploring the intersection of AI and Technology</p>
+
+            <!-- 2. Projects Section (Most Important) -->
+            <section id="projects" class="content-section">
+                <h3 class="section-title">Featured Projects</h3>
                 <div class="projects-grid">
-                   <div class="project-card">
-                    <h3>
-                        <div class="icon-container"><i class="fas fa-brain project-title-icon"></i></div>
-                         Chat Analysis
-                    </h3>
-                    <p>Analyze WhatsApp chat data to uncover insights like most active users, common words, and message frequency.</p>
-                    <div class="tech-tags">
-                    <span><i class="fab fa-python"></i> Python</span>
-                    <span>
-                        <img src="https://numpy.org/images/logo.svg" alt="NumPy" class="tech-icon">
-                        NumPy
-                    </span>
-
-                    <span>
-                        <img src="https://pandas.pydata.org/static/img/pandas_mark.svg" alt="Pandas" class="tech-icon">
-                        Pandas
-                    </span>
-
-                    <span>
-                        <img src="https://seaborn.pydata.org/_static/logo-wide-lightbg.svg" alt="Seaborn" class="tech-icon">
-                        Seaborn
-                    </span>
-
-                    <span>
-                        <img src="https://matplotlib.org/_static/images/logo2.svg" alt="Matplotlib" class="tech-icon">
-                        Matplotlib
-                    </span>
+                    <!-- Waste Management System -->
+                    <div class="card project-card">
+                        <div class="project-header">
+                            <div class="folder-icon"><i class="far fa-folder"></i></div>
+                            <div class="project-links">
+                                <a href="https://github.com/atulsingh1501/waste_management_system" target="_blank"><i
+                                        class="fab fa-github"></i></a>
+                                <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                        <h4>Waste Management System</h4>
+                        <p>Smart dashboard for city waste tracking, route optimization, and citizen reporting.</p>
+                        <div class="tech-stack">
+                            <span><i class="fab fa-react"></i> React + TS</span>
+                            <span><i class="fab fa-node-js"></i> Node.js</span>
+                            <span><i class="fas fa-server"></i> Express</span>
+                            <span><i class="fas fa-bolt"></i> Vite</span>
+                        </div>
                     </div>
-                    <a href="https://github.com/atulsingh1501/Whatsapp-chat-Analysis" target="_blank" class="project-link">
-                        <i class="fab fa-github"></i> View on GitHub
+
+                    <!-- TripSmart -->
+                    <div class="card project-card">
+                        <div class="project-header">
+                            <div class="folder-icon"><i class="far fa-folder"></i></div>
+                            <div class="project-links">
+                                <a href="https://github.com/atulsingh1501/TripSmart" target="_blank"><i
+                                        class="fab fa-github"></i></a>
+                                <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                        <h4>TripSmart AI</h4>
+                        <p>Intelligent trip planner with smart budget allocation and multi-modal transport options.</p>
+                        <div class="tech-stack">
+                            <span><i class="fab fa-react"></i> React + TS</span>
+                            <span><i class="fab fa-node-js"></i> Node.js</span>
+                            <span><i class="fas fa-database"></i> MongoDB</span>
+                            <span><i class="fas fa-wind"></i> Tailwind</span>
+                        </div>
+                    </div>
+
+                    <!-- Whatsapp Chat Analyzer -->
+                    <div class="card project-card">
+                        <div class="project-header">
+                            <div class="folder-icon"><i class="far fa-folder"></i></div>
+                            <div class="project-links">
+                                <a href="https://github.com/atulsingh1501/Whatsapp-chat-Analysis" target="_blank"><i
+                                        class="fab fa-github"></i></a>
+                                <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                        <h4>Whatsapp Chat Analyzer</h4>
+                        <p>Data analysis tool to visualize chat trends, emoji usage, and user activity stats.</p>
+                        <div class="tech-stack">
+                            <span><i class="fab fa-python"></i> Python</span>
+                            <span><i class="fas fa-chart-bar"></i> Streamlit</span>
+                            <span><i class="fas fa-table"></i> Pandas</span>
+                            <span><i class="fas fa-chart-line"></i> Matplotlib</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- 3. Skills Section (Grouped Tags, No Percentages) -->
+            <section id="stack" class="content-section">
+                <h3 class="section-title">Technical Skills</h3>
+                <div class="dashboard-grid" style="grid-template-columns: repeat(3, 1fr); gap: var(--spacing-lg);">
+                    <!-- Languages -->
+                    <div class="card" style="grid-column: span 1;">
+                        <div class="card-header">
+                            <h3><i class="fas fa-code"></i> Languages</h3>
+                        </div>
+                        <div class="skills-container">
+                            <span class="skill-tag"><i class="fab fa-js"></i> JavaScript</span>
+                            <span class="skill-tag"><i class="fab fa-java"></i> Java</span>
+                            <span class="skill-tag"><i class="fas fa-code"></i> C++</span>
+                            <span class="skill-tag"><i class="fab fa-html5"></i> HTML5</span>
+                            <span class="skill-tag"><i class="fab fa-css3-alt"></i> CSS3</span>
+                        </div>
+                    </div>
+
+                    <!-- Frameworks -->
+                    <div class="card" style="grid-column: span 1;">
+                        <div class="card-header">
+                            <h3><i class="fas fa-layer-group"></i> Frameworks</h3>
+                        </div>
+                        <div class="skills-container">
+                            <span class="skill-tag"><i class="fab fa-react"></i> React.js</span>
+                            <span class="skill-tag"><i class="fab fa-node-js"></i> Node.js</span>
+                            <span class="skill-tag"><i class="fas fa-server"></i> Express.js</span>
+                            <span class="skill-tag"><i class="fas fa-database"></i> MongoDB</span>
+                            <span class="skill-tag"><i class="fas fa-wind"></i> Tailwind</span>
+                            <span class="skill-tag"><i class="fas fa-cube"></i> Three.js</span>
+                        </div>
+                    </div>
+
+                    <!-- Tools -->
+                    <div class="card" style="grid-column: span 1;">
+                        <div class="card-header">
+                            <h3><i class="fas fa-tools"></i> Tools</h3>
+                        </div>
+                        <div class="skills-container">
+                            <span class="skill-tag"><i class="fab fa-git-alt"></i> Git</span>
+                            <span class="skill-tag"><i class="fab fa-github"></i> GitHub</span>
+                            <span class="skill-tag"><i class="fas fa-terminal"></i> VS Code</span>
+                            <span class="skill-tag"><i class="fas fa-laptop-code"></i> IntelliJ IDEA</span>
+                            <span class="skill-tag"><i class="fas fa-paper-plane"></i> Postman</span>
+                            <span class="skill-tag"><i class="fas fa-rocket"></i> Antigravity</span>
+                            <span class="skill-tag"><i class="fab fa-figma"></i> Figma</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. Coding Stats Section -->
+            <section id="stats" class="content-section">
+                <h3 class="section-title">Coding Activity</h3>
+                <div class="dashboard-grid">
+                    <!-- GitHub Card (Span 2) -->
+                    <div class="card github-card">
+                        <div class="card-header">
+                            <h3><i class="fab fa-github"></i> Contributions</h3>
+                            <span class="badge" id="github-streak">Streak: -</span>
+                        </div>
+                        <div class="calendar-wrapper">
+                            <div class="calendar">Loading...</div>
+                        </div>
+                    </div>
+
+                    <!-- LeetCode Card -->
+                    <div class="card metric-card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-code"></i> LeetCode</h3>
+                            <a href="https://leetcode.com/u/atul_1501/" target="_blank" class="external-link"><i
+                                    class="fas fa-external-link-alt"></i></a>
+                        </div>
+                        <div class="metric-body">
+                            <div class="big-number" id="leetcode-total">Loading...</div>
+                            <p class="metric-label">Problems Solved</p>
+                            <div class="mini-progress-bars">
+                                <div class="progress-item"><span class="label">Easy</span>
+                                    <div class="bar easy" id="leetcode-easy-bar" style="width: 0%"></div> <span
+                                        id="leetcode-easy-count" style="margin-left: auto;">-</span>
+                                </div>
+                                <div class="progress-item"><span class="label">Med</span>
+                                    <div class="bar medium" id="leetcode-medium-bar" style="width: 0%"></div> <span
+                                        id="leetcode-medium-count" style="margin-left: auto;">-</span>
+                                </div>
+                                <div class="progress-item"><span class="label">Hard</span>
+                                    <div class="bar hard" id="leetcode-hard-bar" style="width: 0%"></div> <span
+                                        id="leetcode-hard-count" style="margin-left: auto;">-</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CodeChef/HackerRank Split -->
+                    <div class="card metric-card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-trophy"></i> Competitive</h3>
+                        </div>
+                        <div class="metric-body" style="gap: 1.5rem; justify-content: flex-start; padding-top: 10px;">
+                            <a href="https://www.codechef.com/users/atul_1501" target="_blank"
+                                style="display: block; width: 100%; text-decoration: none;">
+                                <div
+                                    style="font-weight: 600; color: var(--text-primary); margin-bottom: 4px; display: flex; align-items: center; justify-content: space-between;">
+                                    CodeChef <i class="fas fa-external-link-alt"
+                                        style="font-size: 0.7rem; color: var(--text-secondary);"></i>
+                                </div>
+                                <div id="codechef-rating" style="font-size: 0.85rem; color: var(--text-secondary);">Max
+                                    Rating: <span style="color: var(--accent-color)">1600+</span> (3★)</div>
+                            </a>
+                            <div style="border-top: 1px solid var(--border-subtle); padding-top: 1.5rem; width: 100%;">
+                                <a href="https://www.hackerrank.com/profile/atulsingh05540" target="_blank"
+                                    style="display: block; width: 100%; text-decoration: none;">
+                                    <div
+                                        style="font-weight: 600; color: var(--text-primary); margin-bottom: 4px; display: flex; align-items: center; justify-content: space-between;">
+                                        HackerRank <i class="fas fa-external-link-alt"
+                                            style="font-size: 0.7rem; color: var(--text-secondary);"></i>
+                                    </div>
+                                    <div id="hackerrank-badge"
+                                        style="font-size: 0.85rem; color: var(--text-secondary);">Gold Badge in <span
+                                            style="color: var(--warning-color)">Problem Solving</span></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. Achievements Section -->
+            <section id="achievements" class="content-section">
+                <h3 class="section-title">Achievements</h3>
+                <div class="dashboard-grid" style="grid-template-columns: repeat(3, 1fr);">
+                    <div class="card" style="border-left: 3px solid var(--accent-color);">
+                        <div class="card-header" style="margin-bottom: 0.5rem;">
+                            <h4 style="font-size: 1.1rem; color: var(--text-primary);">Smart India Hackathon</h4>
+                        </div>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary);">Finalist in SIH 2023. Developed
+                            innovative solutions for real-world problems under pressure.</p>
+                    </div>
+                    <div class="card" style="border-left: 3px solid var(--warning-color);">
+                        <div class="card-header" style="margin-bottom: 0.5rem;">
+                            <h4 style="font-size: 1.1rem; color: var(--text-primary);">LeetCode Knight</h4>
+                        </div>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary);">Achieved Knight badge with a max
+                            competition rating of 1800+.</p>
+                    </div>
+                    <div class="card" style="border-left: 3px solid var(--text-secondary);">
+                        <div class="card-header" style="margin-bottom: 0.5rem;">
+                            <h4 style="font-size: 1.1rem; color: var(--text-primary);">CodeChef 3-Star</h4>
+                        </div>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary);">Consistent contest performer with
+                            strong algorithmic problem-solving skills.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. Contact Section -->
+            <section id="connect" class="content-section">
+                <div class="card" style="text-align: center; padding: 60px 40px; align-items: center;">
+                    <h2 style="margin-bottom: 1rem; color: var(--text-primary); font-size: 1.8rem;">Let's Connect</h2>
+                    <p style="color: var(--text-secondary); margin-bottom: 2rem; max-width: 500px;">I'm currently
+                        looking for new opportunities. Whether you have a question or just want to say hi, I'll try my
+                        best to get back to you!</p>
+                    <a href="mailto:atulsingh05540@gmail.com" class="btn btn-primary"
+                        style="display: inline-flex; font-size: 1.1rem; padding: 12px 24px;">
+                        <i class="fas fa-envelope"></i> &nbsp; Say Hello
                     </a>
-                    </div>
-                    <div class="project-card">
-                        <h3>
-                            <div class="icon-container"><i class="fas fa-address-card project-title-icon"></i></div>
-                            Portfolio Website
-                        </h3>
-                        <p>My personal portfolio to showcase my skills and projects, built with HTML, CSS, and JavaScript, focusing on modern design and animations.</p>
-                        <div class="tech-tags">
-                            <span><i class="fab fa-html5"></i> HTML5</span>
-                            <span><i class="fab fa-css3-alt"></i> CSS3</span>
-                            <span><i class="fab fa-js-square"></i> JavaScript</span>
-                        </div>
-                        <a href="https://github.com/atulsingh1501/Portfolio" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i> View on GitHub
-                        </a>
-                    </div>
-                    <div class="project-card">
-                        <h3>Data Visualization</h3>
-                        <p>A conceptual data visualization project designed to explore complex datasets using D3.js and GraphQL.</p>
-                        <div class="tech-tags">
-                            <span>D3.js</span>
-                            <span>Redux</span>
-                            <span>GraphQL</span>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <h3>AI/ML Exploration</h3>
-                        <p>An experimental project exploring machine learning concepts and model deployment with Python and TensorFlow.</p>
-                        <div class="tech-tags">
-                            <span>TensorFlow</span>
-                            <span>Python</span>
-                            <span>Flask</span>
-                        </div>
+                    <div style="margin-top: 3rem; display: flex; justify-content: center; gap: 24px;">
+                        <a href="https://github.com/atulsingh1501" target="_blank" class="icon-link"><i
+                                class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/atul-singh-20y/" target="_blank" class="icon-link"><i
+                                class="fab fa-linkedin"></i></a>
+                        <a href="https://twitter.com" target="_blank" class="icon-link"><i
+                                class="fab fa-twitter"></i></a>
                     </div>
                 </div>
             </section>
 
-            <section id="skills" class="hidden-section">
-                   <h1>My Skills & Expertise</h1>     
-             <!-- Languages Section -->
-            <h2><i class="fas fa-language"></i> Languages and communication</h2>
-            <div class="cards language-cards">
-            <div class="card">
-                <div class="circle">
-                    <svg class="progress-ring" width="100" height="100">
-                        <circle class="progress-ring__track" stroke-width="8" fill="transparent" r="45" cx="50" cy="50"/>
-                        <circle class="progress-ring__circle" stroke-width="8" fill="transparent" r="45" cx="50" cy="50"/>
-                    </svg>
-                    <span>100%</span>
-                </div>
-                <p>
-                    <img src="india.png" alt="India Flag" class="flag-icon" />
-                    Hindi
-                </p>
-                <p>Native Speaker</p>
-            </div>
-            <div class="card">
-                <div class="circle">
-                    <svg class="progress-ring" width="100" height="100">
-                        <circle class="progress-ring__track" stroke-width="8" fill="transparent" r="45" cx="50" cy="50"/>
-                        <circle class="progress-ring__circle" stroke-width="8" fill="transparent" r="45" cx="50" cy="50"/>
-                    </svg>
-                    <span>95%</span>
-                </div>
-                <p>
-                    <img src="uk.png" alt="UK Flag" class="flag-icon" />
-                    English
-                </p>
-                <p>High B2 Level</p>
-            </div>
-            <div class="card">
-                <div class="circle">
-                    <svg class="progress-ring" width="100" height="100">
-                        <circle class="progress-ring__track" stroke-width="8" fill="transparent" r="45" cx="50" cy="50"/>
-                        <circle class="progress-ring__circle" stroke-width="8" fill="transparent" r="45" cx="50" cy="50"/>
-                    </svg>
-                    <span>13%</span>
-                </div>
-                <p>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg" alt="German Flag" class="flag-icon" />
-                    German
-                </p>
-                <p>A1 Level (Learning)</p>
-            </div>
-            <div class="card">
-                <div class="circle">
-                    <svg class="progress-ring" width="100" height="100">
-                        <circle class="progress-ring__track" stroke-width="8" fill="transparent" r="45" cx="50" cy="50"/>
-                        <circle class="progress-ring__circle" stroke-width="8" fill="transparent" r="45" cx="50" cy="50"/>
-                    </svg>
-                    <span>60%</span>
-                </div>
-                <p>
-                    <img src="com.png" alt="communication " class="flag-icon" />
-                    Communication
-                </p>
-                <p>Good</p>
-            </div>
-        </div>
-                <!-- Technical Skills Section -->
-                <h2><i class="fas fa-laptop-code"></i> Technical Skills</h2>
-                <div class="skill-bar">
-                    <p><i class="fas fa-globe"></i> Web Development</p>
-                    <div class="bar"><div class="fill" style="width: 40%;"></div></div>
-                </div>
-                <div class="skill-bar">
-                    <p><i class="fab fa-python"></i> Python</p>
-                    <div class="bar"><div class="fill" style="width: 53%;"></div></div>
-                </div>
-                <div class="skill-bar">
-                    <p><i class="fas fa-gamepad"></i> C++</p>
-                    <div class="bar"><div class="fill" style="width: 52%;"></div></div>
-                </div>
-                <div class="skill-bar">
-                    <p><i class="fas fa-code"></i> DSA</p>
-                    <div class="bar"><div class="fill" style="width: 20%;"></div></div>
-                </div>
-                <div class="skill-bar">
-                    <p><i class="fas fa-database"></i> Data Science</p>
-                    <div class="bar"><div class="fill" style="width: 10%;"></div></div>
-                </div>
-            
-                <!-- Education & Expertise Section -->
-                <h2><i class="fas fa-graduation-cap"></i> Education & Expertise</h2>
-                <div class="cards">
-                    <div class="card">
-                        <h3><i class="fas fa-university"></i> College</h3>
-                        <p>Engineering Student at Parul University</p>
-                        <ul>
-                            <li><i class="fas fa-book"></i> B-tech</li>
-                            <li><i class="fas fa-microscope"></i> CSE student</li>
-                            <li><i class="fas fa-comments"></i> Communication</li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <h3><i class="fas fa-code"></i> Programming</h3>
-                        <p>Self-taught Developer</p>
-                        <ul>
-                            <li><i class="fas fa-brain"></i> AI/ML</li>
-                            <li><i class="fas fa-database"></i> Data Science</li>
-                            <li><i class="fas fa-paint-brush"></i> Frontend Developer</li>
-                            <li><i class="fas fa-gamepad"></i> Data Structure & Algorithms</li> 
-                        </ul>
-                    </div>
-                </div>
-            </section>
-          <section id="achievements" class="hidden-section">
-            <h2 class="cool-heading">Achievements & Recognition</h2>
-            <p class="section-subtitle">A collection of my accomplishments and contributions.</p>
-            <div class="achievements-grid">
-                <!-- Hackathons Card -->
-                <div class="achievement-card">
-                    <div class="achievement-icon"><i class="fas fa-users"></i></div>
-                    <h3>Hackathons & Events</h3>
-                    <p>Collaborative and intensive coding events.</p>
-                    <ul>
-                        <li>
-                            Techfest IIT Bombay 2024 - Aeromodelling (Participation)
-                            <button class="view-proof-btn" data-image="aeromodelling-mail.png">
-                                <i class="fas fa-eye"></i> View Proof
-                            </button>
-                        </li>
-                        <li>
-                            Techfest IIT Bombay 2024 - Rowboatics (Participation)
-                            <button class="view-proof-btn" data-image="rowboatics-mail.png">
-                                <i class="fas fa-eye"></i> View Proof
-                            </button>
-                        </li>
-                        <li>
-                            <a href="https://www.linkedin.com/posts/atul-singh-20y_xrcreatorhackathon-createinindiachallenge-activity-7266892421668438016-CSmP" target="_blank">XR Creator Hackathon 2024 - Top 100 Finalist</a>
-                            <button class="view-proof-btn" data-image="xr-creator-hackathon-qualified-proof.jpg">
-                                <i class="fas fa-eye"></i> View Proof
-                            </button>
-                        </li>
-                        <li>
-                            <a href="https://www.linkedin.com/posts/atul-singh-20y_hackathon-xrinnovation-arvr-activity-7264896921834516480-YcR3" target="_blank">XR Innovation Hackathon - Participation</a>
-                            <button class="view-proof-btn" data-image="xr-innovation-hackathon-proof.jpg">
-                                <i class="fas fa-eye"></i> View Proof
-                            </button>
-                        </li>
-                        <li>
-                            <a href="https://www.linkedin.com/posts/atul-singh-20y_vadodarahackathon-sih2024-innovationforindia-activity-7247657535770394625-lEHg" target="_blank">Vadodara Hackathon 2024 - Top 89 Finalist</a>
-                            <button class="view-proof-btn" data-image="vadodara-hackathon-proof.jpg">
-                                <i class="fas fa-eye"></i> View Proof
-                            </button>
-                        </li>
-                        <li><a href="https://www.linkedin.com/posts/atul-singh-20y_smartindiahackathon-innovation-defensetech-activity-7246918154113691649-b8k2" target="_blank">Smart India Hackathon 2023 - Participation</a></li>
-                    </ul>
-                </div>
-               
-                <!-- Certifications Card -->
-                <div class="achievement-card">
-                    <div class="achievement-icon"><i class="fas fa-certificate"></i></div>
-                    <h3>Certifications</h3>
-                    <p>Validating my skills with industry-recognized credentials.</p>
-                    <ul>
-                        <li><a href="#" target="_blank">Certification Name 1</a></li>
-                    </ul>
-                </div>
+            <footer class="dashboard-footer">
+                <p>© 2024 Atul Singh. Built with code & caffeine.</p>
+            </footer>
+        </main>
+    </div>
 
-                 <!-- Competitive Programming Card -->
-                <div class="achievement-card">
-                    <div class="achievement-icon"><i class="fas fa-keyboard"></i></div>
-                    <h3>Competitive Programming</h3>
-                    <p>Problem-solving on various platforms.</p>
-                    <ul>
-                        <li><a href="https://leetcode.com/u/atul_1501/" target="_blank">LeetCode Profile</a></li>
-                        <li><a href="#" target="_blank">Codeforces Profile</a></li>
-                        <li><a href="#" target="_blank">Codeolio Profile</a></li>
-                    </ul>
-                </div>
-                
-            </div>
-          </section>
-
-          <section id="contact" class="hidden-section">
-            <h2 class="cool-heading">Contact Me</h2>
-            <p class="section-subtitle">Have a question or want to work together? Drop me a message!</p>
-            <form class="contact-form">
-                <div class="form-group">
-                    <label for="form-name">Name</label>
-                    <input type="text" id="form-name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="6" required></textarea>
-                </div>
-                <button type="submit" class="submit-btn">Send Message</button>
-            </form>
-        </section>
-
-        <section id="design" class="hidden-section">
-            <div class="design-hero">
-                <h2 class="glitch-title" data-text="Creative Corner">Creative Corner</h2>
-                <p class="subtitle">Exploring the intersection of code and creativity</p>
-            </div>
-        
-        </section>
-    </main>
-    <footer>
-        <div class="footer-bottom">
-            <div class="footer-brand">
-                <div class="footer-logo">
-                    <i class="fas fa-code"></i>
-                </div>
-                <div class="footer-text">
-                    <h4><span class="highlight">Atul</span> ( Engineering Student / Developer / Designer )</h4>
-                </div>
-            </div>
-            <div class="social-links">
-                <a href="https://github.com/atulsingh1501"  target="_blank" class="social-icon">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/atul-singh-20y/"  target="_blank" class="social-icon">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="#" class="social-icon" target="_blank">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="https://www.instagram.com/_atul_.20/"  target="_blank" class="social-icon">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="#" class="social-icon" target="_blank">
-                    <i class="fab fa-discord"></i>
-                </a>
-            </div>
-            <div class="footer-info">
-                <p class="copyright">© 2024 <span class="highlight">Made with ❤ by Atul</span></p>
-            </div>
-        </div>
-    </footer>
-</div>
-
-<!-- Image Modal Structure -->
-<div id="image-modal" class="modal">
-    <span class="close-modal">&times;</span>
-    <img class="modal-content" id="modal-image">
-</div>
-
+    <!-- Scripts -->
+    <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
