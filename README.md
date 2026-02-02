@@ -29,7 +29,7 @@ This project is my personal space on the web. It's a single-page application des
 
 ---
 
-## 🛠️ Built With
+## 🛠️ Built With love
 
 This project was built using the following core technologies:
 
